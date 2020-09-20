@@ -29,4 +29,31 @@ export const getCharacterByName = name => {
     if(!res.ok) throw 'Could not get character';
     return res.json();
   })
+  .then(json => (
+    json.map(character => ({
+      name: character.name,
+      url: character.photoUrl,
+      affiliation: character.affiliation
+    }))
+  ))
+}
+
+export const getCharacterByAffiliation = affiliation => {
+  return fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=${affiliation}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => {
+    if(!res.ok) throw 'Could not get characters by affiliation';
+    return res.json();
+  })
+  .then(json => (
+    json.map(character => ({
+      name: character.name,
+      url: character.photoUrl,
+      affiliation: character.affiliation
+    }))
+  ))
 }
