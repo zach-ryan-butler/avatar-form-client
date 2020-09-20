@@ -14,7 +14,6 @@ const useStyles = makeStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
     alignItems: 'center',
     width: '100%'
   }
@@ -39,7 +38,7 @@ function AvatarCard({ url, name }) {
 }
 
 AvatarCard.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   name: PropTypes.string.isRequired
 }
 

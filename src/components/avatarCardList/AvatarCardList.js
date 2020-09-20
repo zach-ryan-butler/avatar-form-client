@@ -19,14 +19,14 @@ function AvatarCardList({ characters }) {
   const classes = useStyles();
   const characterGridItems = characters.map(({ url, name }) => {
     return (
-      <Grid item xs={6} sm={4} className={classes.gridItem}>
+      <Grid item xs={12} sm={4} className={classes.gridItem}>
         <AvatarCard url={url} name={name} />
       </Grid>
     )
   })
 
   return (
-    <Grid container className={classes.gridContainer}>
+    <Grid container className={classes.gridContainer} spacing={3}>
       {characterGridItems}
     </Grid>
   )
