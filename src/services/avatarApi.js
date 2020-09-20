@@ -17,3 +17,16 @@ export const getCharacters = () => {
       }))
     ))
 }
+
+export const getCharacterByName = name => {
+  return fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters?name=${name}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => {
+    if(!res.ok) throw 'Could not get character';
+    return res.json();
+  })
+}
