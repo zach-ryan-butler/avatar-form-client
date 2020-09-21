@@ -15,11 +15,10 @@ const useStyles = makeStyles({
 })
 
 function AvatarCardList({ characters }) {
-  console.log(characters);
   const classes = useStyles();
   const characterGridItems = characters.map(({ url, name }) => {
     return (
-      <Grid item xs={12} sm={4} className={classes.gridItem}>
+      <Grid key={`${name}-${url}`} item xs={12} sm={4} className={classes.gridItem}>
         <AvatarCard url={url} name={name} />
       </Grid>
     )
