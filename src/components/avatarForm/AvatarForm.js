@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
-import { Grid, TextField, Avatar } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 
 function AvatarForm({ handleInputChange, values }) {
   return (
