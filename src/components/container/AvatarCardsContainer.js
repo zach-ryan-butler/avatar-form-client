@@ -3,7 +3,7 @@ import { getCharacters, getCharacterByName } from '../../services/avatarApi';
 import AvatarCardList from '../avatarCardList/AvatarCardList';
 import Header from '../header/Header';
 import NameSearch from '../nameSearch/NameSearch';
-import { filterByAffiliation, filterByName } from '../filter/Filter';
+import { filterByAffiliation, filterByName } from '../../utility/filter';
 
 // const initialValues = {
 //   name: '',
