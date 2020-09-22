@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getCharacters, getCharacterByName } from '../../services/avatarApi';
 import AvatarCardList from '../avatarCardList/AvatarCardList';
 import Header from '../header/Header';
-import AvatarForm from '../avatarForm/AvatarForm';
+import NameSearch from '../nameSearch/NameSearch';
 import { filterByAffiliation, filterByName } from '../filter/Filter';
 
-const initialValues = {
-  name: '',
-  nations: ['air']
-}
+// const initialValues = {
+//   name: '',
+//   nations: ['air']
+// }
 
 export default function AvatarCardsContainer() {
 
@@ -28,7 +28,7 @@ export default function AvatarCardsContainer() {
   ]
   
   // const [characters, setCharacters] = useState([])
-  const [values, setValues] = useState(initialValues);
+  // const [values, setValues] = useState(initialValues);
 
   // useEffect(() => {
   //   getCharacters()
@@ -45,18 +45,17 @@ export default function AvatarCardsContainer() {
   //   }
   // }, [values.name])
 
-  const handleInputChange = ({ target }) => {
-    const { name, value } = target;
-    setValues({
-      ...values,
-      [name]: value
-    })
-  }
+  // const handleInputChange = ({ target }) => {
+  //   const { name, value } = target;
+  //   setValues({
+  //     ...values,
+  //     [name]: value
+  //   })
+  // }
 
   return (
     <>
       <Header />
-      <AvatarForm handleInputChange={handleInputChange} values={values} />
       <AvatarCardList characters={characters} />
     </>
   )
